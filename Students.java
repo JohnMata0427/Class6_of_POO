@@ -9,12 +9,11 @@ public class Students {
     float average;
 
     //constructor
-    public Students(String name, String lastname, String subject, float[] grades, float average) {
+    public Students(String name, String lastname, String subject, float[] grades) {
         this.name = name;
         this.lastname = lastname;
         this.subject = subject;
         this.grades = grades;
-        this.average = average;
     }
 
     //metodo getters
