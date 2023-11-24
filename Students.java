@@ -4,16 +4,14 @@ import java.util.Scanner;
 
 public class Students {
     // Attributes
-    String name, lastname, subject;
+    String name, lastname;
+    String[] subject;
     float[] grades;
-    float average;
 
     //constructor
-    public Students(String name, String lastname, String subject, float[] grades) {
+    public Students(String name, String lastname) {
         this.name = name;
         this.lastname = lastname;
-        this.subject = subject;
-        this.grades = grades;
     }
 
     //metodo getters
@@ -25,16 +23,12 @@ public class Students {
         return lastname;
     }
 
-    public String getSubject() {
+    public String[] getSubject() {
         return subject;
     }
 
     public float[] getGrades() {
         return grades;
-    }
-
-    public float getAverage() {
-        return average;
     }
 
     //metodo setters
@@ -47,16 +41,12 @@ public class Students {
         this.lastname = lastname;
     }
 
-    public void setSubject(String subject) {
+    public void setSubject(String[] subject) {
         this.subject = subject;
     }
 
     public void setGrades(float[] grades) {
         this.grades = grades;
-    }
-
-    public void setAverage(float average) {
-        this.average = average;
     }
     
     // Methods
@@ -71,5 +61,34 @@ public class Students {
 
         av = sum/arr.length;
         System.out.println("El promedio de las calificaciones es: " + av);
+    }
+
+    public void inputData(){
+        Scanner gradeSubject = new Scanner(System.in);
+        float[] array = new float[5];
+        String[] array2 = new String[5];
+
+        for(int i = 0; i < 5; i++){
+            System.out.println("Ingrese la " + (i+1) + "° asginatura: ");
+            array2[i] = gradeSubject.nextLine();
+            System.out.println("Ingrese la " + (i+1) + "° calificacion: ");
+            array[i] = gradeSubject.nextFloat();
+            gradeSubject.nextLine();
+        }
+
+        setGrades(array);
+        setSubject(array2);
+    }
+
+    public void printData(){
+        float[] array = new float[5];
+        String[] array2 = new String[5];
+
+        array = getGrades();
+        array2 = getSubject();
+
+        for(int i = 0; i < 5; i++){
+            System.out.println("Asignatura: " + array2[i] + "   Calificación: " + array[i]);
+        }
     }
 }
