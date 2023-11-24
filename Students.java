@@ -1,9 +1,11 @@
 package Class5_of_POO.Class6_of_POO;
 
+import java.util.Scanner;
+
 public class Students {
     // Attributes
     String name, lastname, subject;
-    float grades[]; 
+    float[] grades;
     float average;
 
     //constructor
@@ -56,5 +58,19 @@ public class Students {
 
     public void setAverage(float average) {
         this.average = average;
+    }
+    
+    // Methods
+
+    public void printAverage(){
+        float[] arr = getGrades(); 
+        float sum = 0, av;
+
+        for(int i = 0; i < 5; i++){
+            sum += arr[i];
+        }
+
+        av = sum/arr.length;
+        System.out.println("El promedio de las calificaciones es: " + av);
     }
 }
