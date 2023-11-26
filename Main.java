@@ -7,6 +7,8 @@ public class Main {
         Students studentOne;
         Students studentTwo;
         Students studentThree;
+        Students studentFour;
+        Students studentFive;
 
         studentOne = new Students("Carlitos", "Casa");
         studentTwo = new Students("Isabel", "Paredes");

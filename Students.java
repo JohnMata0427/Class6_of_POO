@@ -8,6 +8,8 @@ public class Students {
     String[] subject;
     float[] grades;
 
+
+
     //constructor
     public Students(String name, String lastname) {
         this.name = name;
@@ -53,14 +55,23 @@ public class Students {
 
     public void printAverage(){
         float[] arr = getGrades(); 
-        float sum = 0, av;
+        float sum = 0, average;
 
         for(int i = 0; i < 5; i++){
             sum += arr[i];
         }
+        average = sum/arr.length;
+        System.out.println("El promedio de las calificaciones es: " + average);
 
-        av = sum/arr.length;
-        System.out.println("El promedio de las calificaciones es: " + av);
+        if(average >=7){
+            System.out.println("Usted aprobo");
+        }
+        else if(4 < average){
+            System.out.println("Usted se quedo a supletorios");
+        }
+        else{
+            System.out.println("Usted perdio la materia, sorry");
+        }
     }
 
     public void inputData(){
