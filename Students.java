@@ -1,5 +1,3 @@
-package Class5_of_POO.Class6_of_POO;
-
 import java.util.Scanner;
 
 public class Students {
@@ -8,15 +6,13 @@ public class Students {
     String[] subject;
     float[] grades;
 
-
-
-    //constructor
+    // Constructor
     public Students(String name, String lastname) {
         this.name = name;
         this.lastname = lastname;
     }
 
-    //metodo getters
+    // Metodo getters
     public String getName() {
         return name;
     }
@@ -33,7 +29,7 @@ public class Students {
         return grades;
     }
 
-    //metodo setters
+    // Metodo setters
 
     public void setName(String name) {
         this.name = name;
@@ -64,27 +60,33 @@ public class Students {
         System.out.println("El promedio de las calificaciones es: " + average);
 
         if(average >=7){
-            System.out.println("Usted aprobo");
+            System.out.println("\nUsted aprobo");
         }
         else if(4 < average){
-            System.out.println("Usted se quedo a supletorios");
+            System.out.println("\nUsted se quedo a supletorios");
         }
         else{
-            System.out.println("Usted perdio la materia, sorry");
+            System.out.println("\nUsted perdio la materia, sorry");
         }
     }
 
     public void inputData(){
-        Scanner gradeSubject = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         float[] array = new float[5];
         String[] array2 = new String[5];
-
+        
         for(int i = 0; i < 5; i++){
-            System.out.println("Ingrese la " + (i+1) + "° asginatura: ");
-            array2[i] = gradeSubject.nextLine();
-            System.out.println("Ingrese la " + (i+1) + "° calificacion: ");
-            array[i] = gradeSubject.nextFloat();
-            gradeSubject.nextLine();
+            System.out.print("\nIngrese el nombre de la " + (i+1) + "° asginatura: ");
+            array2[i] = sc.nextLine();
+            System.out.print("Ingrese la " + (i+1) + "° calificacion: ");
+            array[i] = sc.nextFloat();
+
+            while(array[i] < 0 || array[i] > 10){
+                System.out.print("Ingrese una calificacion válida (del 0 al 10): ");
+                array[i] = sc.nextFloat();
+            }
+
+            sc.nextLine();
         }
 
         setGrades(array);
