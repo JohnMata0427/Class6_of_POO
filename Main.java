@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String name, lastname;
 
-        for(int i = 1; i <= 2; i++){
+        for(int i = 1; i <= 10; i++){
             System.out.print("\nIngrese el nombre del estudiante " + i + ": ");
             name = sc.nextLine();
             System.out.print("Ingrese el apellido del estudiante " + i + ": ");
